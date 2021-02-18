@@ -1,0 +1,13 @@
+{
+  "name": "Benites Reeds",
+  "short_name": "Benites",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/icon/icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#591B20",
+  "theme_color": "#591B20"
+}
