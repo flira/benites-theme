@@ -1,0 +1,149 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+img,
+div,
+figure {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  height: auto;
+}
+
+.grid {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(4, 1fr);
+  max-width: var(--paragraphs-max-width);
+  margin: auto;
+  padding-left: var(--grid-padding);
+  padding-right: var(--grid-padding);
+  width: 100%;
+}
+
+.grid.full-width {
+  max-width: none;
+}
+
+@for $i from 1 to 4 {
+  .col-$i {
+    grid-column: span $i;
+  }
+}
+
+@for $i from 5 to 12 {
+  .col-$i {
+    grid-column: span 4;
+  }
+}
+
+@media (max-width: 480px) {
+  .no-sm {
+    display: none;
+  }
+
+  @for $i from 1 to 4 {
+    .col-$(i)-sm {
+      grid-column: span $i;
+    }
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .no-md {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @for $i from 5 to 8 {
+    .col-$(i) {
+      grid-column: span $i;
+    }
+  }
+
+  @for $i from 9 to 12 {
+    .col-$(i) {
+      grid-column: span 8;
+    }
+  }
+
+  @for $i from 1 to 8 {
+    .col-$(i)-md {
+      grid-column: span $i;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  @for $i from 5 to 12 {
+    .col-$(i) {
+      grid-column: span $i;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .no-lg {
+    display: none;
+  }
+
+  @for $i from 1 to 12 {
+    .col-$(i)-lg {
+      grid-column: span $i;
+    }
+  }
+}
+
+@media (min-width: 1024) {
+  .no-xlg {
+    display: none;
+  }
+
+  @for $i from 1 to 12 {
+    .col-$(i)-xlg {
+      grid-column: span $i;
+    }
+  }
+}
+
+
+/* @see http://a11yproject.com/posts/how-to-hide-content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* @see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+ Credit: HTML5 Boilerplate */
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}

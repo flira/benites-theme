@@ -2,33 +2,52 @@
   "name": "benites-js",
   "private": true,
   "version": "0.0.1",
-  "description": "Stencil App Starter",
+  "description": "Arquivos estáticos do tema Benites Reeds",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "scripts": {
-    "build": "stencil build --prerender",
+    "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@stencil/core": "^2.3.0",
-    "@stencil/helmet": "^0.3.2",
-    "@stencil/router": "^1.0.1",
-    "@stencil/sass": "^1.4.1",
-    "@stencil/store": "^1.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker",
+    "@stencil/core": "^2.6.0",
+    "@stencil/postcss": "^2.0.0",
+    "@stencil/store": "^1.4.1",
+    "@types/autoprefixer": "^10.2.0",
     "@types/jest": "^26.0.19",
     "@types/puppeteer": "^3.0.5",
+    "autoprefixer": "^10.2.4",
+    "cssnano": "^4.1.10",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
     "normalize.css": "^8.0.1",
+    "postcss-for": "^2.1.1",
+    "postcss-import": "^14.0.0",
+    "postcss-mixins": "^7.0.3",
     "puppeteer": "^5.5.0",
+    "stencil": "^0.0.5",
     "workbox-build": "^4.3.1"
   },
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-regular-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1"
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-regular-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@types/postcss-import": "^12.0.0"
   }
 }

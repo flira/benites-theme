@@ -1,0 +1,96 @@
+button,
+input,
+textarea,
+.button,
+.wp-block-button__link {
+  border: solid 1px var(--color-main-1);
+  padding: calc(var(--grid-gap) * .618) var(--grid-gap);
+  box-sizing: border-box;
+}
+
+button,
+input[type=button],
+input[type=submit],
+.button,
+.wp-block-button__link {
+  background: var(--color-light-1);
+  color: var(--color-main-1);
+  font-family: var(--font-family-titles);
+  text-decoration: none;
+}
+
+button:disabled,
+input[type=button]:disabled,
+input[type=submit]:disabled,
+.button.disabled,
+.disabled,
+button:disabled:focus,
+input[type=button]:disabled:focus,
+input[type=submit]:disabled:focus,
+.button.disabled:focus,
+.disabled:focus,
+button:disabled:hover,
+input[type=button]:disabled:hover,
+input[type=submit]:disabled:hover,
+.button.disabled:focus,
+.disabled:hover {
+  background: var(--color-alt-4);
+  color: var(--color-alt-3);
+}
+
+button:focus,
+button:hover,
+input[type=button]:focus,
+input[type=submit]:hover,
+.button:focus,
+.button:hover {
+  background: var(--color-main-2);
+  color: var(--color-light-1);
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+.button:focus {
+  outline: solid 3px var(--color-alt-2);
+}
+
+textarea {
+  max-width: 100%;
+  width: 100%;
+}
+
+select {
+  background: var(--color-light-1);
+  border: none;
+  border-bottom: solid 1px var(--color-light-0);
+  max-width: calc(var(--paragraphs-max-width) / 2);
+  padding: calc(var(--grid-gap) * .618) var(--grid-gap);
+  width: 100%;
+}
+
+.focus-animation {
+  background: var(--color-light-1);
+  padding: var(--grid-gap);
+  position: relative;
+}
+
+.focus-animation::before {
+  background: var(--color-light-0);
+  content: '';
+  filter: blur(8px);
+  height: 100%;
+  left: 0;
+  opacity: .25;
+  position: absolute;
+  transform: scale(.9);
+  transition: transform .25s ease-in;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.focus-animation:focus::before,
+.focus-animation:hover::before {
+  transform: scale(1);
+}

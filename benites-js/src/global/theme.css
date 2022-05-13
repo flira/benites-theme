@@ -1,0 +1,12 @@
+/* Above the fold style */
+
+@import '../../node_modules/normalize.css/normalize.css';
+@import '../../css/variables.css';
+@import '../../css/typography.css';
+@import '../../css/grid.css';
+@import '../../css/table.css';
+@import '../../css/inputs.css';
+@import '../../css/main-header.css';
+@import '../../css/main-content.css';
+@import '../../css/main-footer.css';
+@import '../components/benites-menu/benites-menu.css';

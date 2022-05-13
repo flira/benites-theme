@@ -4,16 +4,15 @@
 <head>
   <meta charset="utf-8">
   <title>Benites Reeds</title>
-  <meta name="Description"
-    content="Benites Reeds Store">
+  <meta name="Description" content="Benites Reeds Store">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#591B20">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="x-ua-compatible" content="IE=Edge">
 
-  <script type="module" src="/build/app.esm.js"></script>
-  <script nomodule src="/build/app.js"></script>
-  <link href="/build/app.css" rel="stylesheet">
+  <script type="module" src="/build/benites.esm.js"></script>
+  <script nomodule src="/build/benites.js"></script>
+  <link href="/build/benites.css" rel="stylesheet">
 
   <link rel="apple-touch-icon" href="/assets/icon/icon.png">
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
@@ -26,9 +25,591 @@
 </head>
 
 <body>
-  <benites-store>
+  <header class="content-header">
+    <div class="grid">
+      <div class="col-2">
+        <h1 class="header-logo">
+          <a href="https://bento.toscocloud.com/pt">
+            <img class="header-logo__img lazy loaded"
+              src="https://bento.toscocloud.com/wordpress/wp-content/themes/benites-theme/benites-js/www/assets/img/logo.svg"
+              data-src="https://bento.toscocloud.com/wordpress/wp-content/themes/benites-theme/benites-js/www/assets/img/logo.svg"
+              alt="Benites Reeds" data-was-processed="true" width="1479" height="641">
+          </a>
+        </h1>
+      </div>
+      <div class="col-10 col-2-sm">
+        <benites-menu cart-contents-count="1">
+          <nav class="header-menu">
+            <ul id=menu-header class="header-menu__list reset-list">
+              <li id=menu-item-153
+                class="menu-item-store menu-item menu-item-type-post_type menu-item-object-page menu-item-153"><a
+                  href=https://bento.toscocloud.com/pt/shop />Loja</a></li>
+              <li id=menu-item-141
+                class="menu-item-cart menu-item menu-item-type-post_type menu-item-object-page menu-item-141"><a
+                  href=https://bento.toscocloud.com/pt/cart />Cesta</a></li>
+            </ul>
+          </nav>
+        </benites-menu>
+      </div>
+    </div>
+  </header>
+  <main class="main-content">
+    <div class="breadcrumb grid" style="padding-top: var(--grid-gap);">
+      <div class="col-12">
+        <nav class="woocommerce-breadcrumb"><a
+            href="https://www.benitesreeds.com.br/pt?v=204a3b59e221">Início</a>&nbsp;/&nbsp;<a
+            href="https://www.benitesreeds.com.br/pt/product-category/canes-reeds/?v=204a3b59e221">Canas e
+            palhetas</a>&nbsp;/&nbsp;Canas</nav>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-12">
+        <div class="woocommerce-notices-wrapper">
+          <div class="woocommerce-message" role="alert">
+            <a href="https://www.benitesreeds.com.br/pt/cart/?v=204a3b59e221" tabindex="1" class="button wc-forward">Ver
+              carrinho</a> “Canas” foi adicionado no seu carrinho.
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      /*<![CDATA[*/
+      .comment-form [type=email],
+      .comment-form [type=text] {
+        display: block;
+        margin: .15em 0 var(--grid-gap);
+        min-width: 100%
+      }
 
-  </benites-store>
+      .onsale {
+        background-color: var(--color-green-3);
+        display: block;
+        color: var(--color-light-1);
+        left: var(--grid-gap);
+        line-height: 1;
+        padding: calc(var(--grid-gap) *.618) var(--grid-gap);
+        position: absolute;
+        top: var(--grid-gap)
+      }
+
+      .product-img {
+        position: relative;
+        text-align: center
+      }
+
+      .products.related {
+        display: none
+      }
+
+      .required {
+        color: var(--color-main-2)
+      }
+
+      .wc-tabs {
+        align-items: end;
+        border-bottom: solid 1px var(--color-main-1);
+        display: flex;
+        font-size: .875em;
+        list-style: none;
+        padding: 0
+      }
+
+      .wc-tabs a {
+        background: var(--color-alt-4);
+        color: var(--color-alt-3);
+        display: block;
+        text-decoration: none;
+        padding: calc(var(--grid-gap) * .618) var(--grid-gap)
+      }
+
+      .wc-tabs a:focus {
+        background: var(--color-main-3);
+        color: var(--color-light-1)
+      }
+
+      .wc-tabs .active a {
+        background: var(--color-main-1);
+        color: var(--color-light-1)
+      }
+
+      .wc-tabs li {
+        margin-right: 4px
+      }
+
+      .woocommerce-message {
+        background: var(--color-light-1);
+        border: solid 2px var(--color-alt-2);
+        padding: var(--grid-gap)
+      }
+
+      .woocommerce-product-gallery__image a {
+        background: var(--color-light-1);
+        display: inline-block;
+        padding: var(--grid-gap)
+      }
+
+      .woocommerce-variation-add-to-cart {
+        display: flex;
+        justify-content: center;
+        padding: var(--grid-gap) 0
+      }
+
+      .wp-post-image {
+        display: block
+      }
+
+      @media (min-width: 480px) {
+        .wc-tabs {
+          font-size: 1rem
+        }
+      }
+
+      /*]]>*/
+    </style>
+    <article id="product-104"
+      class="product type-product post-104 status-publish first instock product_cat-canes-reeds has-post-thumbnail sale shipping-taxable purchasable product-type-variable">
+      <header class="grid">
+        <div class="col-12">
+          <h1 class="main-content__heading">Canas</h1>
+        </div>
+        <div class="product-img col-4">
+          <span class="onsale">Oferta!</span>
+          <div
+            class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images"
+            data-columns="4" style="opacity: 1; transition: opacity 0.25s ease-in-out 0s;">
+            <figure class="woocommerce-product-gallery__wrapper">
+              <div data-thumb="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-300x300.jpg"
+                data-thumb-alt="" class="woocommerce-product-gallery__image"
+                data-o_data-thumb="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-100x100.jpg"><a
+                  href="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1.jpg"
+                  data-o_href="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1.jpg"><img
+                    src="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-300x300.jpg"
+                    class="wp-post-image" alt="" loading="lazy" title="" data-caption=""
+                    data-src="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1.jpg"
+                    data-large_image="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1.jpg"
+                    data-large_image_width="2283" data-large_image_height="2283"
+                    srcset="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-300x300.jpg 300w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-1024x1024.jpg 1024w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-150x150.jpg 150w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-768x768.jpg 768w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-1536x1536.jpg 1536w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-2048x2048.jpg 2048w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-100x100.jpg 100w"
+                    sizes="(max-width: 300px) 100vw, 300px"
+                    data-o_src="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-300x300.jpg"
+                    data-o_height="300" data-o_width="300"
+                    data-o_srcset="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-300x300.jpg 300w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-1024x1024.jpg 1024w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-150x150.jpg 150w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-768x768.jpg 768w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-1536x1536.jpg 1536w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-2048x2048.jpg 2048w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-100x100.jpg 100w"
+                    data-o_sizes="(max-width: 300px) 100vw, 300px" data-o_title="" data-o_data-caption="" data-o_alt=""
+                    data-o_data-src="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1.jpg"
+                    data-o_data-large_image="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1.jpg"
+                    data-o_data-large_image_width="2283" data-o_data-large_image_height="2283" width="300"
+                    height="300"></a></div>
+            </figure>
+          </div>
+        </div>
+        <div class="col-8">
+          <p class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span
+                    class="woocommerce-Price-currencySymbol">R$</span>15,00</bdi></span></del> <ins><span
+                class="woocommerce-Price-amount amount"><bdi><span
+                    class="woocommerce-Price-currencySymbol">R$</span>1,00</bdi></span></ins></p>
+          <div class="woocommerce-product-details__short-description">
+            <p>As canas Benites são todas processadas do jeito que você precisa para facilitar a sua raspagem e chegar
+              na palheta pronta mais rápido. Por isso você pode escolher a dureza (canas moles não são comercializadas),
+              a espessura da goiva da cana, a espessura da raspagem e o molde da cana. Para maiores informações sobre
+              cada característica, leia a descrição abaixo.</p>
+          </div>
+        </div>
+      </header>
+      <div class="summary entry-summary grid">
+        <div class="col-12">
+          <benites-variations-form>
+            <form class="variations_form cart" action="https://www.benitesreeds.com.br/pt/product/cane/?v=204a3b59e221"
+              method="post" enctype="multipart/form-data" data-product_id="104"
+              data-product_variations="[{&quot;attributes&quot;:{&quot;attribute_dureza&quot;:&quot;&quot;,&quot;attribute_goiva&quot;:&quot;&quot;,&quot;attribute_raspagem&quot;:&quot;&quot;,&quot;attribute_molde&quot;:&quot;&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\u00e3o aplic\u00e1vel&quot;,&quot;display_price&quot;:1,&quot;display_regular_price&quot;:15,&quot;image&quot;:{&quot;title&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1-300x300.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1-300x300.jpg 300w, https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1-1024x1024.jpg 1024w, https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1-150x150.jpg 150w, https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1-768x768.jpg 768w, https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1-1536x1536.jpg 1536w, https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1-2048x2048.jpg 2048w, https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1-100x100.jpg 100w&quot;,&quot;sizes&quot;:&quot;(max-width: 300px) 100vw, 300px&quot;,&quot;full_src&quot;:&quot;https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1.jpg&quot;,&quot;full_src_w&quot;:2283,&quot;full_src_h&quot;:2283,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/www.benitesreeds.com.br\/wp-content\/uploads\/2021\/01\/canas-1-150x150.jpg&quot;,&quot;thumb_src_w&quot;:150,&quot;thumb_src_h&quot;:150,&quot;src_w&quot;:300,&quot;src_h&quot;:300},&quot;image_id&quot;:190,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;<p>Descri\u00e7\u00e3o dentro do Variations<\/p>\n&quot;,&quot;variation_id&quot;:105,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;0.03&quot;,&quot;weight_html&quot;:&quot;0.03 kg&quot;}]"
+              current-image="190">
+              <table class="variations" cellspacing="0">
+                <tbody>
+                  <tr>
+                    <td class="label"><label for="dureza">Dureza</label></td>
+                    <td class="value">
+                      <select id="dureza" class="" name="attribute_dureza" data-attribute_name="attribute_dureza"
+                        data-show_option_none="yes">
+                        <option value="">Escolha uma opção</option>
+                        <option value="1 - Dura" selected="selected" class="attached enabled">1 - Dura</option>
+                        <option value="2 - Média" class="attached enabled">2 - Média</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label"><label for="goiva">Goiva</label></td>
+                    <td class="value">
+                      <select id="goiva" class="" name="attribute_goiva" data-attribute_name="attribute_goiva"
+                        data-show_option_none="yes">
+                        <option value="">Escolha uma opção</option>
+                        <option value="1 - Fina" class="attached enabled">1 - Fina</option>
+                        <option value="2 - Média" selected="selected" class="attached enabled">2 - Média</option>
+                        <option value="3 - Grossa" class="attached enabled">3 - Grossa</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label"><label for="raspagem">Raspagem</label></td>
+                    <td class="value">
+                      <select id="raspagem" class="" name="attribute_raspagem" data-attribute_name="attribute_raspagem"
+                        data-show_option_none="yes">
+                        <option value="">Escolha uma opção</option>
+                        <option value="1 - Fina" class="attached enabled">1 - Fina</option>
+                        <option value="2 - Média" class="attached enabled">2 - Média</option>
+                        <option value="3 - Grossa" selected="selected" class="attached enabled">3 - Grossa</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label"><label for="molde">Molde</label></td>
+                    <td class="value">
+                      <select id="molde" class="" name="attribute_molde" data-attribute_name="attribute_molde"
+                        data-show_option_none="yes">
+                        <option value="">Escolha uma opção</option>
+                        <option value="0 - Sem molde" class="attached enabled">0 - Sem molde</option>
+                        <option value="1 - Rieger 1a" class="attached enabled">1 - Rieger 1a</option>
+                        <option value="2 - Fox 2" class="attached enabled">2 - Fox 2</option>
+                        <option value="3 - SVH" selected="selected" class="attached enabled">3 - SVH</option>
+                        <option value="4 - Dicker/Herzberg" class="attached enabled">4 - Dicker/Herzberg</option>
+                      </select><a class="reset_variations" href="#">Limpar</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="single_variation_wrap">
+                <div class="woocommerce-variation single_variation">
+                  <div class="woocommerce-variation-description">
+                    <p>Descrição dentro do Variations</p>
+                  </div>
+                  <div class="woocommerce-variation-price"></div>
+                  <div class="woocommerce-variation-availability"></div>
+                </div>
+                <div
+                  class="woocommerce-variation-add-to-cart variations_button woocommerce-variation-add-to-cart-enabled">
+                  <div class="quantity">
+                    <label class="screen-reader-text" for="quantity_60bc2315bb69a">Canas quantidade</label>
+                    <input type="number" id="quantity_60bc2315bb69a" class="input-text qty text" step="1" min="1" max=""
+                      name="quantity" value="1" title="Qtd" size="4" placeholder="" inputmode="numeric">
+                  </div>
+                  <button type="submit" class="single_add_to_cart_button button alt">Comprar</button>
+                  <input type="hidden" name="add-to-cart" value="104">
+                  <input type="hidden" name="product_id" value="104">
+                  <input type="hidden" name="variation_id" class="variation_id" value="105">
+                </div>
+              </div>
+            </form>
+          </benites-variations-form>
+          <div class="woocommerce-tabs wc-tabs-wrapper">
+            <ul class="tabs wc-tabs" role="tablist">
+              <li class="description_tab" id="tab-title-description" role="tab" aria-controls="tab-description">
+                <a href="#tab-description">
+                  Descrição </a>
+              </li>
+              <li class="additional_information_tab" id="tab-title-additional_information" role="tab"
+                aria-controls="tab-additional_information">
+                <a href="#tab-additional_information">
+                  Informação adicional </a>
+              </li>
+              <li class="reviews_tab active" id="tab-title-reviews" role="tab" aria-controls="tab-reviews">
+                <a href="#tab-reviews">
+                  Avaliações (2) </a>
+              </li>
+            </ul>
+            <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab"
+              id="tab-description" role="tabpanel" aria-labelledby="tab-title-description" style="display: none;">
+              <h2>Descrição</h2>
+              <p><strong>Dureza.&nbsp;</strong>Apenas duas durezas são comercializadas: 1 – Dura, que ajuda para tocar
+                notas agudas, fazer partes de 1º fagote ou tocar peças solo que exigem tocar mais forte. A cana 2 –
+                Média ajuda a tocar os pianos, graves e partes de 2º fagote, pois exigem menos raspagem do que as canas
+                duras para se chegar nesse tipo de palheta, mas também podem ser usadas em outros contextos. Canas
+                consideradas moles são descartadas durante o processo de preparação.</p>
+              <p><strong>Goiva.</strong> A espessura da goiva é comercializada em três medidas: 1 – Fina (parecida com a
+                goiva das canas Rieger), 2 – Média (usada para fabricar as palhetas Benites) e 3 – Grossa (parecida com
+                a goiva das canas Danzi). Canas que tem a goiva mais fina tendem a ter o som mais brilhante e ajudam a
+                tocar agudos e as canas com a goiva mais grossa tendem a ter o som mais escuro e ajudam a tocar mais os
+                graves.</p>
+              <p><strong>Raspagem.</strong> A espessura da raspagem pode ser escolhida em três medidas: 1 – Fina (usada
+                para fabricar as palhetas Benites e parecidas com a raspagem da cana Rieger), 2 – Média e 3 – Grossa
+                (parecida com a raspagem da cana Danzi). Com isso você pode escolher a espessura de raspagem que combina
+                mais com a sua raspagem final e assim gastar menos tempo até chegar no resultado final da sua palheta.
+              </p>
+              <p><strong>Molde.</strong>&nbsp;Existem 4 moldes que podem ser escolhidos para sua cana além da opção 0 –
+                Sem molde. A opção 1 – Rieger 1a é um dos moldes mais usados no mundo, é conhecido por ser flexível para
+                tocar graves, agudos, e também deixa o fagotista escolher com a raspagem a sonoridade mais brilhante ou
+                escura. O molde 2 – Fox 2 é um molde bem parecido com o 1a da Rieger, mas este é um pouco mais estreito
+                na região do primeiro arame, o que ajuda a subir um pouco a afinação geral e também é uma boa escolha de
+                molde para quem está aprendendo a raspar palhetas, pois oferece resultados mais rápido. O molde 3 – SVH
+                é um molde encomendado pelo fagotista George Sakakeeny, que foi aluno de K. David van Hosen, e é um
+                molde mais largo que o Rieger 1a e é recomendado para fagotistas que querem mais sonoridade sem
+                prejudicar a sonoridade. O molde 4 – Dicker/Herzberg é um molde encomendado pelo fagotista Michael
+                Dicker com as medidas do molde de Norman Herzberg (mas com um tubo de medida mais estreita e por isso
+                não é necessário o chanfro de Herzberg para formar a palheta) e é um molde que tem um som mais escuro e
+                a região do lá2 ao fá3 um pouco mais baixa, ajudando a corrigir a afinação na região.</p>
+            </div>
+            <div
+              class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab"
+              id="tab-additional_information" role="tabpanel" aria-labelledby="tab-title-additional_information"
+              style="display: none;">
+              <h2>Informação adicional</h2>
+              <table class="woocommerce-product-attributes shop_attributes">
+                <tbody>
+                  <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--weight">
+                    <th class="woocommerce-product-attributes-item__label">Peso</th>
+                    <td class="woocommerce-product-attributes-item__value" data-o_content="0.03 kg">0.03 kg</td>
+                  </tr>
+                  <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_dureza">
+                    <th class="woocommerce-product-attributes-item__label">Dureza</th>
+                    <td class="woocommerce-product-attributes-item__value">
+                      <p>1 – Dura, 2 – Média</p>
+                    </td>
+                  </tr>
+                  <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_goiva">
+                    <th class="woocommerce-product-attributes-item__label">Goiva</th>
+                    <td class="woocommerce-product-attributes-item__value">
+                      <p>1 – Fina, 2 – Média, 3 – Grossa</p>
+                    </td>
+                  </tr>
+                  <tr
+                    class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_raspagem">
+                    <th class="woocommerce-product-attributes-item__label">Raspagem</th>
+                    <td class="woocommerce-product-attributes-item__value">
+                      <p>1 – Fina, 2 – Média, 3 – Grossa</p>
+                    </td>
+                  </tr>
+                  <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_molde">
+                    <th class="woocommerce-product-attributes-item__label">Molde</th>
+                    <td class="woocommerce-product-attributes-item__value">
+                      <p>0 – Sem molde, 1 – Rieger 1a, 2 – Fox 2, 3 – SVH, 4 – Dicker/Herzberg</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--reviews panel entry-content wc-tab"
+              id="tab-reviews" role="tabpanel" aria-labelledby="tab-title-reviews" style="">
+              <div id="reviews" class="woocommerce-Reviews">
+                <div id="comments">
+                  <h2 class="woocommerce-Reviews-title">
+                    2 avaliações para <span>Canas</span></h2>
+                  <ol class="commentlist">
+                    <li class="review even thread-even depth-1" id="li-comment-31">
+                      <div id="comment-31" class="comment_container"><img alt=""
+                          src="https://secure.gravatar.com/avatar/95469ca325499f81da01ecc0442dea13?s=60&amp;d=mm&amp;r=g"
+                          srcset="https://secure.gravatar.com/avatar/95469ca325499f81da01ecc0442dea13?s=120&amp;d=mm&amp;r=g 2x"
+                          class="avatar avatar-60 photo" loading="lazy" width="60" height="60">
+                        <div class="comment-text">
+                          <benites-stars-rating class="hydrated">
+                            <!---->
+                            <div class="star-rating" role="img" aria-label="Avaliação 3 de 5"><svg aria-hidden="true"
+                                focusable="false" data-prefix="fas" data-icon="star"
+                                class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                              </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+                                class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                              </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+                                class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                              </svg><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star"
+                                class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                  d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z">
+                                </path>
+                              </svg><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star"
+                                class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                  d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z">
+                                </path>
+                              </svg></div>
+                            <p class="meta">
+                              <strong class="woocommerce-review__author">teste@saulo.com </strong>
+                              <span class="woocommerce-review__dash">–</span> <time
+                                class="woocommerce-review__published-date" datetime="2021-05-12T06:16:14+00:00">maio 12,
+                                2021</time>
+                            </p>
+                            <div class="description">
+                              <p>Fofo</p>
+                            </div>
+                          </benites-stars-rating>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="review odd alt thread-odd thread-alt depth-1" id="li-comment-33">
+                      <div id="comment-33" class="comment_container"><img alt=""
+                          src="https://secure.gravatar.com/avatar/c98f7b8a679754e87d15e28aab593daa?s=60&amp;d=mm&amp;r=g"
+                          srcset="https://secure.gravatar.com/avatar/c98f7b8a679754e87d15e28aab593daa?s=120&amp;d=mm&amp;r=g 2x"
+                          class="avatar avatar-60 photo" loading="lazy" width="60" height="60">
+                        <div class="comment-text">
+                          <benites-stars-rating class="hydrated">
+                            <!---->
+                            <div class="star-rating" role="img" aria-label="Avaliação 5 de 5"><svg aria-hidden="true"
+                                focusable="false" data-prefix="fas" data-icon="star"
+                                class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                              </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+                                class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                              </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+                                class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                              </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+                                class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                              </svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+                                class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                </path>
+                              </svg></div>
+                            <p class="meta">
+                              <strong class="woocommerce-review__author">Fábio Benites </strong>
+                              <span class="woocommerce-review__dash">–</span> <time
+                                class="woocommerce-review__published-date" datetime="2021-05-12T12:33:10+00:00">maio 12,
+                                2021</time>
+                            </p>
+                            <div class="description">
+                              <p>teste</p>
+                            </div>
+                          </benites-stars-rating>
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+                <div id="review_form_wrapper">
+                  <div id="review_form">
+                    <div id="respond" class="comment-respond">
+                      <span id="reply-title" class="comment-reply-title">Adicionar uma avaliação <small><a
+                            rel="nofollow" id="cancel-comment-reply-link"
+                            href="/pt/product/cane/?v=204a3b59e221#respond" style="display:none;">Cancelar
+                            resposta</a></small></span>
+                      <form action="https://www.benitesreeds.com.br/wp-comments-post.php?v=204a3b59e221" method="post"
+                        id="commentform" class="comment-form">
+                        <p class="comment-notes"><span id="email-notes">O seu endereço de e-mail não será
+                            publicado.</span> Campos obrigatórios são marcados com <span class="required">*</span></p>
+                        <benites-stars-input class="hydrated">
+                          <div class="comment-form-rating"><label for="rating">Sua avaliação&nbsp;<span
+                                class="required">*</span></label>
+                            <p class="stars"> <span> <a class="star-1" href="#">1</a> <a class="star-2" href="#">2</a>
+                                <a class="star-3" href="#">3</a> <a class="star-4" href="#"s>4</a> <a class="star-5"
+                                  href="#">5</a> </span> </p><select name="rating" id="rating" required=""
+                              style="display: none;">
+                              <option value="">Avaliar…</option>
+                              <option value="5">Perfeito</option>
+                              <option value="4">Bom</option>
+                              <option value="3">Razoável</option>
+                              <option value="2">Nada mal</option>
+                              <option value="1">Muito ruim</option>
+                            </select>
+                          </div>
+                        </benites-stars-input>
+                        <p class="comment-form-comment"><label for="comment">Sua avaliação sobre o produto&nbsp;<span
+                              class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8"
+                            required=""></textarea></p>
+                        <p class="comment-form-author"><label for="author">Nome&nbsp;<span
+                              class="required">*</span></label><input id="author" name="author" type="text" value=""
+                            size="30" required=""></p>
+                        <p class="comment-form-email"><label for="email">E-mail&nbsp;<span
+                              class="required">*</span></label><input id="email" name="email" type="email" value=""
+                            size="30" required=""></p>
+                        <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent"
+                            name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label
+                            for="wp-comment-cookies-consent">Salvar meus dados neste navegador para a próxima vez que eu
+                            comentar.</label></p>
+                        <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit"
+                            value="Enviar"> <input type="hidden" name="comment_post_ID" value="104"
+                            id="comment_post_ID">
+                          <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                        </p><input type="hidden" id="ak_js" name="ak_js" value="139"><textarea name="ak_hp_textarea"
+                          cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+          <section class="related products">
+            <h2>Produtos relacionados</h2>
+            <ul class="products columns-4">
+              <li
+                class="product type-product post-18 status-publish first instock product_cat-canes-reeds has-post-thumbnail shipping-taxable purchasable product-type-variable">
+                <benites-product-item class="product-item">
+                  <a href="https://www.benitesreeds.com.br/pt/product/reed/?v=204a3b59e221"
+                    class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img
+                      src="https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-150x150.jpg"
+                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Um monte de palhetas"
+                      loading="lazy"
+                      srcset="https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-150x150.jpg 150w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-300x300.jpg 300w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-1024x1024.jpg 1024w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-768x768.jpg 768w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-1536x1536.jpg 1536w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-2048x2048.jpg 2048w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-100x100.jpg 100w"
+                      sizes="(max-width: 150px) 100vw, 150px" width="150" height="150">
+                    <div class="product-description">
+                      <h2 class="woocommerce-loop-product__title">Palhetas</h2>
+                      <benites-stars-rating class="hydrated">
+                        <!---->
+                      </benites-stars-rating>
+                      <span class="price"><span class="woocommerce-Price-amount amount"><bdi><span
+                              class="woocommerce-Price-currencySymbol">R$</span>45,00</bdi></span> – <span
+                          class="woocommerce-Price-amount amount"><bdi><span
+                              class="woocommerce-Price-currencySymbol">R$</span>90,00</bdi></span></span>
+                    </div>
+                  </a><a href="https://www.benitesreeds.com.br/pt/product/reed/?v=204a3b59e221" data-quantity="1"
+                    class="button product_type_variable add_to_cart_button" data-product_id="18" data-product_sku="5000"
+                    aria-label="Selecione as opções para “Palhetas”" rel="nofollow">Ver opções</a>
+                </benites-product-item>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="content-footer">
+    <div class="grid">
+      <div class="col-2">
+        <a href="https://bento.toscocloud.com/pt">
+          <img class="footer-logo__img lazy loaded"
+            src="https://bento.toscocloud.com/wordpress/wp-content/themes/benites-theme/benites-js/www/assets/img/logo.svg"
+            alt="Benites Reeds" data-was-processed="true" width="1479" height="641">
+        </a>
+      </div>
+      <nav class="footer-menu col-10 col-2-sm">
+        <ul id=menu-footer class="footer-menu__list reset-list">
+          <li id=menu-item-155
+            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-155"><a
+              href=https://bento.toscocloud.com/pt/privacy-policy />Termos de privacidade</a></li>
+          <li id=menu-item-156 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-156"><a
+              href=https://bento.toscocloud.com/pt/contact />Contato</a></li>
+          <li id=menu-item-158
+            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-147 current_page_item menu-item-158">
+            <a href=https://bento.toscocloud.com/pt/about/ aria-current=page>Sobre a loja</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 </body>
 
 </html>

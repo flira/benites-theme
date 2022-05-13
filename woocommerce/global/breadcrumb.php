@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! empty( $breadcrumb ) ) {
-
+	echo '<div class="breadcrumb grid" style="padding-top: var(--grid-gap);"><div class="col-12">';
 	echo $wrap_before;
 
 	foreach ( $breadcrumb as $key => $crumb ) {
@@ -42,5 +42,5 @@ if ( ! empty( $breadcrumb ) ) {
 	}
 
 	echo $wrap_after;
-
+	echo '</div></div>';
 }

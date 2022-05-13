@@ -25,4 +25,8 @@ if ( ! wc_review_ratings_enabled() ) {
 	return;
 }
 
+echo '<benites-stars-rating>';
+
 echo wc_get_rating_html( $product->get_average_rating() ); // WordPress.XSS.EscapeOutput.OutputNotEscaped.
+
+echo '</benites-stars-rating>';

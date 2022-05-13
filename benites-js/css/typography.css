@@ -1,0 +1,84 @@
+html {
+  background: var(--color-background);
+  color: var(--color-text);
+  font: 400 var(--font-size)/1.382 var(--font-family-paragraphs);
+}
+
+a {
+  color: var(--color-anchor);
+}
+
+a:focus,
+a:hover {
+  color: var(--color-anchor__focus);
+  text-decoration: none;
+}
+
+dt {
+  font-size: 1.125em;
+  font-weight: 700;
+  margin-top: .618em;
+}
+
+dd {
+  margin: 0;
+}
+
+figcaption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+legend {
+  font-family: var(--font-family-titles);
+  line-height: 1;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em 0 .618em;
+}
+
+h1 {
+  font-size: 4.235rem;
+  margin: .618em 0;
+}
+
+h2 {
+  font-size: 2.618rem;
+}
+
+h3 {
+  font-size: 1.618rem;
+}
+
+h4 {
+  font-size: 1.382rem;
+}
+
+del {
+  opacity: .6;
+}
+
+ins {
+  background: var(--color-main-4);
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 .3em;
+}
+
+p {
+  max-width: var(--paragraphs-max-width);
+}
+
+.reset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

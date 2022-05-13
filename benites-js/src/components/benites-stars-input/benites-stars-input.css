@@ -1,0 +1,8 @@
+.comment-form-rating .stars a {
+  color: var(--color-main-3);
+}
+
+.comment-form-rating .stars a:focus,
+.comment-form-rating .stars a:hover {
+  color: var(--color-main-1);
+}

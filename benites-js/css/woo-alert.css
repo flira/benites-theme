@@ -1,0 +1,5 @@
+.woocommerce-message {
+  background: var(--color-light-1);
+  border: solid 2px var(--color-alt-2);
+  padding: var(--grid-gap);
+}

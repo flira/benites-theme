@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Benites Reeds</title>
+  <meta name="Description" content="Benites Reeds Store">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#591B20">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="x-ua-compatible" content="IE=Edge">
+
+  <script type="module" src="/build/benites.esm.js"></script>
+  <script nomodule src="/build/benites.js"></script>
+  <link href="/build/benites.css" rel="stylesheet">
+
+  <link rel="apple-touch-icon" href="/assets/icon/icon.png">
+  <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,600;1,600&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="content-header">
+    <div class="grid">
+      <div class="col-2">
+        <h1 class="header-logo">
+          <a href="https://bento.toscocloud.com/pt">
+            <img class="header-logo__img lazy loaded"
+              src="https://bento.toscocloud.com/wordpress/wp-content/themes/benites-theme/benites-js/www/assets/img/logo.svg"
+              data-src="https://bento.toscocloud.com/wordpress/wp-content/themes/benites-theme/benites-js/www/assets/img/logo.svg"
+              alt="Benites Reeds" data-was-processed="true" width="1479" height="641">
+          </a>
+        </h1>
+      </div>
+      <div class="col-10 col-2-sm">
+        <benites-menu cart-contents-count="1">
+          <nav class="header-menu">
+            <ul id=menu-header class="header-menu__list reset-list">
+              <li id=menu-item-153
+                class="menu-item-store menu-item menu-item-type-post_type menu-item-object-page menu-item-153"><a
+                  href=https://bento.toscocloud.com/pt/shop />Loja</a></li>
+              <li id=menu-item-141
+                class="menu-item-cart menu-item menu-item-type-post_type menu-item-object-page menu-item-141"><a
+                  href=https://bento.toscocloud.com/pt/cart />Cesta</a></li>
+            </ul>
+          </nav>
+        </benites-menu>
+      </div>
+    </div>
+  </header>
+  <main class="main-content">
+    <style>
+      /*<![CDATA[*/
+      .add_to_cart_button {
+        display: block;
+        margin-top: var(--grid-gap);
+        text-align: center
+      }
+
+      .products {
+        list-style: none;
+        padding: 0
+      }
+
+      .product,
+      .product-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        text-align: center
+      }
+
+      .product .attachment-woocommerce_thumbnail {
+        width: 100%
+      }
+
+      .product .woocommerce-loop-product__title {
+        margin: .3em 0
+      }
+
+      .woocommerce-loop-product__link,
+      .woocommerce-loop-product__link:focus,
+      .woocommerce-loop-product__link:hover {
+        background: var(--color-light-1);
+        color: var(--color-text);
+        height: 100%;
+        line-height: 0;
+        padding: 16px;
+        transition: box-shadow .3s ease;
+        text-decoration: none
+      }
+
+      .woocommerce-loop-product__link:focus,
+      .woocommerce-loop-product__link:hover {
+        box-shadow: 0 0 8px rgba(0, 0, 0, .2)
+      }
+
+      .product-description {
+        line-height: 1.382
+      }
+
+      .woocommerce-loop-product__title {
+        font-size: 1.618rem
+      }
+
+      @media (min-width: 768px) {
+        .products {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-column-gap: var(--grid-gap);
+          grid-row-gap: var(--grid-gap)
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .products {
+          grid-template-columns: repeat(3, 1fr)
+        }
+      }
+
+      /*]]>*/
+    </style>
+    <div class="breadcrumb grid">
+      <div class="col-12">
+        <nav class="woocommerce-breadcrumb"><a href="https://www.benitesreeds.com.br/pt">Início</a>&nbsp;/&nbsp;Loja
+        </nav>
+      </div>
+    </div>
+    <article>
+      <header class="woocommerce-products-header grid">
+        <h1 class="main-content__heading woocommerce-products-header__title page-title col-12">Loja</h1>
+      </header>
+      <div class="content grid">
+        <div class="col-12">
+          <div class="woocommerce-notices-wrapper"></div>
+          <p class="woocommerce-result-count">
+            Exibindo todos 2 resultados</p>
+          <form class="woocommerce-ordering" method="get">
+            <select name="orderby" class="orderby" aria-label="Pedido da loja">
+              <option value="menu_order" selected="selected">Ordenação padrão</option>
+              <option value="popularity">Ordenar por popularidade</option>
+              <option value="rating">Ordenar por média de classificação</option>
+              <option value="date">Ordenar por mais recente</option>
+              <option value="price">Ordenar por preço: menor para maior</option>
+              <option value="price-desc">Ordenar por preço: maior para menor</option>
+            </select>
+            <input type="hidden" name="paged" value="1">
+          </form>
+          <ul class="products columns-3">
+            <li
+              class="product type-product post-104 status-publish first instock product_cat-canes-reeds has-post-thumbnail shipping-taxable purchasable product-type-variable">
+              <benites-product-item class="product-item">
+                <a href="https://www.benitesreeds.com.br/pt/product/cane/"
+                  class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img
+                    src="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-150x150.jpg"
+                    data-src="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-150x150.jpg"
+                    class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy loaded" alt=""
+                    loading="lazy"
+                    data-srcset="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-150x150.jpg 150w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-300x300.jpg 300w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-1024x1024.jpg 1024w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-768x768.jpg 768w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-1536x1536.jpg 1536w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-2048x2048.jpg 2048w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-100x100.jpg 100w"
+                    data-sizes="(max-width: 150px) 100vw, 150px" sizes="(max-width: 150px) 100vw, 150px"
+                    srcset="https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-150x150.jpg 150w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-300x300.jpg 300w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-1024x1024.jpg 1024w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-768x768.jpg 768w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-1536x1536.jpg 1536w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-2048x2048.jpg 2048w, https://www.benitesreeds.com.br/wp-content/uploads/2021/01/canas-1-100x100.jpg 100w"
+                    data-was-processed="true" width="150" height="150">
+                  <div class="product-description">
+                    <h2 class="woocommerce-loop-product__title">Canas</h2>
+                    <div class="star-rating" role="img" aria-label="Avaliação 4.00 de 5"><span
+                        style="width:80%">Avaliação <strong class="rating">4.00</strong> de 5</span></div>
+                    <span class="price"><span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">R$</span>15,00</bdi></span></span>
+                  </div>
+                </a><a href="https://www.benitesreeds.com.br/pt/product/cane/" data-quantity="1"
+                  class="button product_type_variable add_to_cart_button" data-product_id="104" data-product_sku=""
+                  aria-label="Selecione as opções para “Canas”" rel="nofollow">Ver opções</a>
+              </benites-product-item>
+            </li>
+            <li
+              class="product type-product post-18 status-publish instock product_cat-canes-reeds has-post-thumbnail shipping-taxable purchasable product-type-variable">
+              <benites-product-item class="product-item">
+                <a href="https://www.benitesreeds.com.br/pt/product/reed/"
+                  class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img
+                    src="https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-150x150.jpg"
+                    data-src="https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-150x150.jpg"
+                    class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazy loaded"
+                    alt="Um monte de palhetas" loading="lazy"
+                    data-srcset="https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-150x150.jpg 150w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-300x300.jpg 300w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-1024x1024.jpg 1024w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-768x768.jpg 768w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-1536x1536.jpg 1536w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-2048x2048.jpg 2048w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-100x100.jpg 100w"
+                    data-sizes="(max-width: 150px) 100vw, 150px" sizes="(max-width: 150px) 100vw, 150px"
+                    srcset="https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-150x150.jpg 150w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-300x300.jpg 300w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-1024x1024.jpg 1024w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-768x768.jpg 768w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-1536x1536.jpg 1536w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-2048x2048.jpg 2048w, https://www.benitesreeds.com.br/wp-content/uploads/2020/12/palhetas-100x100.jpg 100w"
+                    data-was-processed="true" width="150" height="150">
+                  <div class="product-description">
+                    <h2 class="woocommerce-loop-product__title">Palhetas</h2>
+                    <span class="price"><span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">R$</span>45,00</bdi></span> – <span
+                        class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">R$</span>90,00</bdi></span></span>
+                  </div>
+                </a><a href="https://www.benitesreeds.com.br/pt/product/reed/" data-quantity="1"
+                  class="button product_type_variable add_to_cart_button" data-product_id="18" data-product_sku="5000"
+                  aria-label="Selecione as opções para “Palhetas”" rel="nofollow">Ver opções</a>
+              </benites-product-item>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="content-footer">
+    <div class="grid">
+      <div class="col-2">
+        <a href="https://bento.toscocloud.com/pt">
+          <img class="footer-logo__img lazy loaded"
+            src="https://bento.toscocloud.com/wordpress/wp-content/themes/benites-theme/benites-js/www/assets/img/logo.svg"
+            alt="Benites Reeds" data-was-processed="true" width="1479" height="641">
+        </a>
+      </div>
+      <nav class="footer-menu col-10 col-2-sm">
+        <ul id=menu-footer class="footer-menu__list reset-list">
+          <li id=menu-item-155
+            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-155"><a
+              href=https://bento.toscocloud.com/pt/privacy-policy />Termos de privacidade</a></li>
+          <li id=menu-item-156 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-156"><a
+              href=https://bento.toscocloud.com/pt/contact />Contato</a></li>
+          <li id=menu-item-158
+            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-147 current_page_item menu-item-158">
+            <a href=https://bento.toscocloud.com/pt/about/ aria-current=page>Sobre a loja</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>

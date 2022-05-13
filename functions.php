@@ -9,11 +9,13 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wr
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
 function benites_reeds_wrapper_start() {
-    echo '<main>';
+    // echo '<main class="main-content">';
+    echo '';
 }
 add_action('woocommerce_before_main_content', 'benites_reeds_wrapper_start', 10);
 function benites_reeds_wrapper_end() {
-    echo '</main>';
+    // echo '</main>';
+    echo '';
 }
 add_action('woocommerce_after_main_content', 'benites_reeds_wrapper_end', 10);
 
@@ -32,5 +34,11 @@ function benites_reeds_add_woocommerce_support() {
       ),
   ) );
 }
-
 add_action( 'after_setup_theme', 'benites_reeds_add_woocommerce_support' );
+
+function theme_slug_setup() {
+    add_theme_support( 'title-tag' );
+ }
+ add_action( 'after_setup_theme', 'theme_slug_setup' );
+
+ add_post_type_support( 'page', 'excerpt' );

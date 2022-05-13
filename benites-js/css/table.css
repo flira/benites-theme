@@ -1,0 +1,37 @@
+table {
+  border-collapse: collapse;
+  font-size: .875em;
+  padding: 0;
+  width: 100%;
+}
+
+tbody th,
+tfoot th {
+  border-right: solid 1px var(--color-alt-3);
+}
+
+tfoot {
+  border-top: solid 2px var(--color-main-1);
+}
+
+td {
+  padding: calc((var(--grid-gap) * .618) / 2);
+}
+
+th {
+  font-family: var(--font-family-titles);
+  padding: calc(var(--grid-gap) * .618);
+  text-transform: uppercase;
+}
+
+thead th {
+  border-bottom: solid 1px var(--color-alt-3);
+}
+
+thead + tbody tr:first-child td {
+  padding-top: calc((var(--grid-gap) * .618));
+}
+
+th + td {
+  padding-left: var(--grid-gap);
+}

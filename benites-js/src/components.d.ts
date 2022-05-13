@@ -5,62 +5,61 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults } from "@stencil/router";
 export namespace Components {
-    interface AppHome {
+    interface BenitesMenu {
+        "cartContentsCount": number;
     }
-    interface AppProfile {
-        "match": MatchResults;
+    interface BenitesStarsInput {
     }
-    interface AppRoot {
+    interface BenitesStarsRating {
     }
 }
 declare global {
-    interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
+    interface HTMLBenitesMenuElement extends Components.BenitesMenu, HTMLStencilElement {
     }
-    var HTMLAppHomeElement: {
-        prototype: HTMLAppHomeElement;
-        new (): HTMLAppHomeElement;
+    var HTMLBenitesMenuElement: {
+        prototype: HTMLBenitesMenuElement;
+        new (): HTMLBenitesMenuElement;
     };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
+    interface HTMLBenitesStarsInputElement extends Components.BenitesStarsInput, HTMLStencilElement {
     }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
+    var HTMLBenitesStarsInputElement: {
+        prototype: HTMLBenitesStarsInputElement;
+        new (): HTMLBenitesStarsInputElement;
     };
-    interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
+    interface HTMLBenitesStarsRatingElement extends Components.BenitesStarsRating, HTMLStencilElement {
     }
-    var HTMLAppRootElement: {
-        prototype: HTMLAppRootElement;
-        new (): HTMLAppRootElement;
+    var HTMLBenitesStarsRatingElement: {
+        prototype: HTMLBenitesStarsRatingElement;
+        new (): HTMLBenitesStarsRatingElement;
     };
     interface HTMLElementTagNameMap {
-        "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
-        "app-root": HTMLAppRootElement;
+        "benites-menu": HTMLBenitesMenuElement;
+        "benites-stars-input": HTMLBenitesStarsInputElement;
+        "benites-stars-rating": HTMLBenitesStarsRatingElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppHome {
+    interface BenitesMenu {
+        "cartContentsCount"?: number;
     }
-    interface AppProfile {
-        "match"?: MatchResults;
+    interface BenitesStarsInput {
     }
-    interface AppRoot {
+    interface BenitesStarsRating {
     }
     interface IntrinsicElements {
-        "app-home": AppHome;
-        "app-profile": AppProfile;
-        "app-root": AppRoot;
+        "benites-menu": BenitesMenu;
+        "benites-stars-input": BenitesStarsInput;
+        "benites-stars-rating": BenitesStarsRating;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
-            "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "benites-menu": LocalJSX.BenitesMenu & JSXBase.HTMLAttributes<HTMLBenitesMenuElement>;
+            "benites-stars-input": LocalJSX.BenitesStarsInput & JSXBase.HTMLAttributes<HTMLBenitesStarsInputElement>;
+            "benites-stars-rating": LocalJSX.BenitesStarsRating & JSXBase.HTMLAttributes<HTMLBenitesStarsRatingElement>;
         }
     }
 }

@@ -1,0 +1,76 @@
+:root {
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --color-main-1: #730202;
+  --color-main-2: #A62C21;
+  --color-main-3: #D95525;
+  --color-main-4: #F2D4AE;
+  --color-main-5: #F2EAE4;
+  --color-alt-1: #0D0D0D;
+  --color-alt-2: #591B20;
+  --color-alt-3: #8C5D5D;
+  --color-alt-4: #D9D0C1;
+  --color-alt-5: #F2F2F2;
+  --color-green-1: #2B4009;
+  --color-green-2: #32401C;
+  --color-green-3: #5E8C14;
+  --color-green-4: #7FBF1B;
+  --color-green-5: #9FCA59;
+  --color-blue-1: #031440;
+  --color-blue-2: #162240;
+  --color-blue-3: #062C8C;
+  --color-blue-4: #083CBF;
+  --color-blue-5: #456ACA;
+  --color-light-0: #000;
+  --color-light-1: #fff;
+  --color-anchor: var(--color-blue-3);
+  --color-anchor__focus: var(--color-blue-5);
+  --color-background: var(--color-main-5);
+  --color-text: var(--color-alt-1);
+  --grid-gap: 16px;
+  --grid-padding: 16px;
+  --font-family-paragraphs: 'Merriweather', serif;
+  --font-family-titles: 'Jost', sans-serif;
+  --font-size: 100%;
+  --paragraphs-max-width: 45em;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size: 112.5%;
+  }
+}
+
+@media (min-width: 900x) {
+  :root {
+    --grid-gap: 24px;
+    --grid-padding: 16px;
+  }
+}
+
+.dark-mode {
+  --color-main-5: #730202;
+  --color-main-4: #A62C21;
+  --color-main-3: #D95525;
+  --color-main-2: #F2D4AE;
+  --color-main-1: #F2EAE4;
+  --color-alt-5: #0D0D0D;
+  --color-alt-4: #591B20;
+  --color-alt-3: #8C5D5D;
+  --color-alt-2: #D9D0C1;
+  --color-alt-1: #F2F2F2;
+  --color-green-5: #2B4009;
+  --color-green-4: #32401C;
+  --color-green-3: #5E8C14;
+  --color-green-2: #7FBF1B;
+  --color-green-1: #9FCA59;
+  --color-blue-5: #031440;
+  --color-blue-4: #162240;
+  --color-blue-3: #062C8C;
+  --color-blue-2: #083CBF;
+  --color-blue-1: #456ACA;
+  --color-light-1: #000;
+  --color-light-0: #fff;
+  --color-background: var(--color-alt-5);
+}

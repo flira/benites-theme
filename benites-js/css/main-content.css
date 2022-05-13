@@ -1,0 +1,13 @@
+.main-content {
+  padding-bottom: 2.618rem;
+}
+
+.main-content__header {
+  margin-bottom: calc(var(--grid-gap) * -2);
+}
+
+.main-content__heading {
+  border-bottom: solid 2px var(--color-alt-2);
+  margin-bottom: .318em;
+  padding-bottom: .3em;
+}

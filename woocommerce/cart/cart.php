@@ -18,25 +18,100 @@
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
+<style>
+.actions,
+.wc-proceed-to-checkout {
+  text-align: center;
+}
 
+.coupon {
+  display: none;
+}
+
+.product-name,
+.product-quantity {
+  max-width: 10em;
+}
+
+.product-name {
+  font-size: 1rem;
+}
+
+.product-name a {
+  font-family: var(--font-family-titles);
+  font-size: 1.125em;
+}
+
+.product-thumbnail .attachment-woocommerce_thumbnail {
+  border: solid 5px var(--color-light-1);
+  transition: box-shadow .3s ease;
+}
+
+.product-thumbnail a:focus {
+  outline: none;
+}
+
+
+.product-thumbnail a:focus .attachment-woocommerce_thumbnail,
+.product-thumbnail a:hover .attachment-woocommerce_thumbnail {
+  box-shadow: 0 0 8px rgba(0, 0, 0, .25);
+}
+
+.remove {
+  color: var(--color-main-1);
+  font-size: 1.618rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.remove:focus,
+.remove:hover {
+  color: var(--color-main-3);
+  outline: none;
+}
+
+.variation {
+  font-size: .8em;
+}
+
+.variation p {
+  display: inline;
+}
+
+.wc-proceed-to-checkout {
+  margin-top: var(--grid-gap);
+}
+
+.woocommerce-message {
+  background: var(--color-light-1);
+  border: solid 2px var(--color-alt-2);
+  padding: var(--grid-gap);
+}
+
+.woocommerce-shipping-methods {
+  list-style: none;
+  padding: 0;
+}
+</style>
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
-	<?php do_action( 'woocommerce_before_cart_table' ); ?>
+  <?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-		<thead>
-			<tr>
-				<th class="product-remove">&nbsp;</th>
-				<th class="product-thumbnail">&nbsp;</th>
-				<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-				<th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
-				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
-				<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php do_action( 'woocommerce_before_cart_contents' ); ?>
+  <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+    <thead>
+      <tr>
+        <th class="product-remove">&nbsp;</th>
+        <th class="product-thumbnail">&nbsp;</th>
+        <th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
+        <th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
+        <th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
+        <th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
-			<?php
+      <?php
 			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
@@ -44,10 +119,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					?>
-					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+      <tr
+        class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-						<td class="product-remove">
-							<?php
+        <td class="product-remove">
+          <?php
 								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									'woocommerce_cart_item_remove_link',
 									sprintf(
@@ -60,10 +136,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 									$cart_item_key
 								);
 							?>
-						</td>
+        </td>
 
-						<td class="product-thumbnail">
-						<?php
+        <td class="product-thumbnail">
+          <?php
 						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 						if ( ! $product_permalink ) {
@@ -72,10 +148,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 							printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
 						}
 						?>
-						</td>
+        </td>
 
-						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
-						<?php
+        <td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+          <?php
 						if ( ! $product_permalink ) {
 							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
 						} else {
@@ -92,16 +168,16 @@ do_action( 'woocommerce_before_cart' ); ?>
 							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
 						}
 						?>
-						</td>
+        </td>
 
-						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
-							<?php
+        <td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
+          <?php
 								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>
-						</td>
+        </td>
 
-						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
-						<?php
+        <td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
+          <?php
 						if ( $_product->is_sold_individually() ) {
 							$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
 						} else {
@@ -120,49 +196,54 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 						?>
-						</td>
+        </td>
 
-						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
-							<?php
+        <td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
+          <?php
 								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>
-						</td>
-					</tr>
-					<?php
+        </td>
+      </tr>
+      <?php
 				}
 			}
 			?>
 
-			<?php do_action( 'woocommerce_cart_contents' ); ?>
+      <?php do_action( 'woocommerce_cart_contents' ); ?>
 
-			<tr>
-				<td colspan="6" class="actions">
+      <tr>
+        <td colspan="6" class="actions">
 
-					<?php if ( wc_coupons_enabled() ) { ?>
-						<div class="coupon">
-							<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button>
-							<?php do_action( 'woocommerce_cart_coupon' ); ?>
-						</div>
-					<?php } ?>
+          <?php if ( wc_coupons_enabled() ) { ?>
+          <div class="coupon">
+            <label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text"
+              name="coupon_code" class="input-text" id="coupon_code" value=""
+              placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button type="submit" class="button"
+              name="apply_coupon"
+              value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button>
+            <?php do_action( 'woocommerce_cart_coupon' ); ?>
+          </div>
+          <?php } ?>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+          <button type="submit" class="button" name="update_cart"
+            value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 
-					<?php do_action( 'woocommerce_cart_actions' ); ?>
+          <?php do_action( 'woocommerce_cart_actions' ); ?>
 
-					<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
-				</td>
-			</tr>
+          <?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+        </td>
+      </tr>
 
-			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-		</tbody>
-	</table>
-	<?php do_action( 'woocommerce_after_cart_table' ); ?>
+      <?php do_action( 'woocommerce_after_cart_contents' ); ?>
+    </tbody>
+  </table>
+  <?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
 
 <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 
 <div class="cart-collaterals">
-	<?php
+  <?php
 		/**
 		 * Cart collaterals hook.
 		 *

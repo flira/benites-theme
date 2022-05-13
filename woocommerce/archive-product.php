@@ -6,9 +6,9 @@
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
+ * maintain compatibility. We try to do this
+ * the readme will list any important c as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped andhanges.
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
@@ -17,8 +17,90 @@
 
 defined( 'ABSPATH' ) || exit;
 
-get_header( 'shop' );
+get_header( 'shop' ); ?>
+<style>
+.add_to_cart_button {
+  display: block;
+  margin-top: var(--grid-gap);
+  text-align: center;
+}
 
+.onsale {
+  background-color: var(--color-green-3);
+  display: block;
+  color: var(--color-light-1);
+  line-height: 1;
+  padding: calc(var(--grid-gap) *.618) var(--grid-gap);
+  position: absolute;
+}
+
+.product-description {
+  line-height: 1.382;
+}
+
+.products {
+  list-style: none;
+  padding: 0;
+}
+
+.product,
+.product-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.product .attachment-woocommerce_thumbnail {
+  width: 100%;
+}
+
+.product .woocommerce-loop-product__title {
+  margin: .3em 0;
+}
+
+.woocommerce-loop-product__link,
+.woocommerce-loop-product__link:focus,
+.woocommerce-loop-product__link:hover {
+  background: var(--color-light-1);
+  color: var(--color-text);
+  height: 100%;
+  line-height: 0;
+  padding: 16px;
+  transition: box-shadow .3s ease;
+  text-decoration: none;
+}
+
+.woocommerce-loop-product__link:focus,
+.woocommerce-loop-product__link:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+}
+
+.woocommerce-loop-product__title {
+  font-size: 1.618rem;
+}
+
+.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: var(--grid-gap);
+    grid-row-gap: var(--grid-gap);
+  }
+}
+
+@media (min-width: 1024px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>
+<?php
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -27,14 +109,15 @@ get_header( 'shop' );
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
 do_action( 'woocommerce_before_main_content' );
-
 ?>
-<header class="woocommerce-products-header">
-	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	<?php endif; ?>
+<article>
+  <header class="woocommerce-products-header grid">
+    <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+    <h1 class="main-content__heading woocommerce-products-header__title page-title col-12">
+      <?php woocommerce_page_title(); ?></h1>
+    <?php endif; ?>
 
-	<?php
+    <?php
 	/**
 	 * Hook: woocommerce_archive_description.
 	 *
@@ -43,8 +126,10 @@ do_action( 'woocommerce_before_main_content' );
 	 */
 	do_action( 'woocommerce_archive_description' );
 	?>
-</header>
-<?php
+  </header>
+  <div class="content grid">
+    <div class="col-12">
+      <?php
 if ( woocommerce_product_loop() ) {
 
 	/**
@@ -94,12 +179,8 @@ if ( woocommerce_product_loop() ) {
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
 do_action( 'woocommerce_after_main_content' );
-
-/**
- * Hook: woocommerce_sidebar.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-do_action( 'woocommerce_sidebar' );
-
-get_footer( 'shop' );
+?>
+    </div>
+  </div>
+</article>
+<?php  get_footer( 'shop' );
