@@ -42,7 +42,7 @@
   }
 }
 
-@media (min-width: 900x) {
+@media (min-width: 900px) {
   :root {
     --grid-gap: 24px;
     --grid-padding: 16px;

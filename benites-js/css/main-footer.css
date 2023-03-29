@@ -15,7 +15,7 @@
 }
 
 .footer-logo__img {
-  filter: invert();
+  filter: invert(100%);
   padding: calc(var(--grid-padding) / 2) 0;
 }
 
